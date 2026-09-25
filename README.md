@@ -18,6 +18,87 @@
 
 ---
 
+## 📖 Comprehensive User Manual & Usage Guide
+
+This step-by-step manual guides developers, governance officers, and administrators on how to effectively operate NovaSmart AI Governance Studio.
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        NOVASMART AI GOVERNANCE STUDIO CANVAS                            │
+├──────────────────────────────┬──────────────────────────────┬──────────────────────────┤
+│ 1. Presets & Controls        │ 2. Real-Time Dialogue Studio │ 3. Multi-Agent Graph     │
+│  - Governance Domains        │  - Token Caret Streaming     │  - 6-Node SVG Pipeline   │
+│  - Risk Threshold Sliders    │  - Confidence Ring Badges    │  - Active Pulse Traces   │
+│  - Theme Palette Selectors   │  - JSON Tool Accordions      │  - Decision Popover Cards│
+└──────────────────────────────┴──────────────────────────────┴──────────────────────────┘
+```
+
+### Step 1: Launching the Studio
+1. Open your terminal and start the server daemon:
+   ```bash
+   python3 -m http.server 8080 --bind 0.0.0.0
+   ```
+2. Open your web browser and navigate to:
+   ```text
+   http://localhost:8080
+   ```
+
+---
+
+### Step 2: Interacting with the Dialogue Studio
+1. **Selecting a Domain Preset**:
+   - In the left sidebar panel, click on a governance domain (e.g. *Enterprise Procurement*, *Financial Risk Mitigation*, or *Healthcare Compliance*).
+   - Watch the studio automatically adjust policy threshold rules and system instruction contexts.
+2. **Sending Dialogue Prompts**:
+   - Type a prompt into the chat input bar at the bottom center of the canvas.
+   - Click **Send** or press `Enter`.
+   - Toggle the **Voice Input Microphone** icon to enable Web Audio voice feedback effects.
+3. **Observing Real-Time Token Telemetry**:
+   - Watch response text stream character-by-character with a blinking cursor caret.
+   - Inspect the **Confidence Badge Ring** displaying model certainty scores (e.g. `98.4% Confidence`).
+   - Click on **Tool Call Accordions** to expand and inspect raw JSON payloads returned by background tools.
+
+---
+
+### Step 3: Visualizing Multi-Agent Workflows
+1. Look at the right-hand **High-Definition Workflow Map** (`1280x620` SVG canvas).
+2. As requests are processed, glowing pulse animations highlight active pipeline nodes in sequence:
+   - **User Query**: Incoming user prompt.
+   - **Screening Agent**: Initial policy screening & risk assessment.
+   - **Gemini Omni Tool Callout**: Video generation tool invocation.
+   - **Supervisor Agent**: Risk escalation when policy thresholds are breached.
+   - **Human Approval**: Decision popover card.
+   - **Policy Guard**: Safety shield enforcing compliance limits.
+
+---
+
+### Step 4: Exercising Human-in-the-Loop Risk Controls
+1. **Triggering a Policy Risk Escalation**:
+   - Type a high-risk prompt in the dialogue input:
+     ```text
+     Issue an emergency 25% price override discount on server hardware order #9941.
+     ```
+2. **Evaluating the Decision Modal**:
+   - When the financial override exceeds the 15% threshold, an interactive **Human Approval Modal Card** automatically pops up over the screen.
+   - Review the detailed **Risk Score Card** (`Score: 0.94 - CRITICAL RISK`).
+3. **Executing Governance Actions**:
+   - Click **Approve Override** (entering mandatory audit reason notes) OR click **Reject & Enforce Guardrails** to block the transaction.
+
+---
+
+### Step 5: Generating Videos with Google's Gemini Omni Model
+1. Type a multimodal product request into the dialogue studio:
+   ```text
+   Generate a short promo video for our flagship Quantum AI Server item.
+   ```
+2. The `generate_item_video_tool.py` ADK tool function executes:
+   - Calls Google's Gemini Omni model (`gemini-omni-flash-preview`) in the `global` region.
+   - Saves binary video blobs to the Playground's Artifacts panel via `tool_context.save_artifact`.
+   - Uploads bytes in-memory to Google Cloud Storage (`novasmart-seed-bucket-qwiklabs-gcp-03-1405d3f8adce`).
+3. View the generated video stream directly within the dialogue stream via public HTTPS player card.
+
+---
+
 ## 🎯 What Problem Does This Project Solve?
 
 Modern AI agents and multi-agent swarms operate with high autonomy, creating critical enterprise governance challenges:
