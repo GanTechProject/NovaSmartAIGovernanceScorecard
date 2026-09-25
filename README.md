@@ -18,11 +18,30 @@
 
 ---
 
+## 🎯 What Problem Does This Project Solve?
+
+Modern AI agents and multi-agent swarms operate with high autonomy, creating critical enterprise governance challenges:
+
+1. **Black-Box Agent Orchestration**: Traditional LLM chats obscure how agents delegate tasks, execute tool calls, and route requests across multi-agent pipelines.
+2. **Uncontrolled Risk & Policy Violations**: Autonomous agents can issue unauthorized discounts, override safety thresholds, or bypass pricing guidelines without human confirmation.
+3. **Auditability & Traceability Deficits**: Lack of real-time telemetry, structured JSON tool call traces, and persistent cloud audit logs makes regulatory compliance impossible.
+
+---
+
+## 💡 Key Benefits of NovaSmart AI Governance Studio
+
+- **Full Multi-Agent Transparency**: Visualizes agent-to-agent (A2A) workflows on an interactive 6-node SVG graph showing request routing, tool calls, and supervisor escalations.
+- **Human-in-the-Loop Policy Guardrails**: Automatically triggers interactive policy approval modals whenever financial or policy risk thresholds (e.g., >15% price override) are breached.
+- **Seamless Multimodal Generation**: Integrates Google's Gemini Omni model to generate domain product videos, auto-persist binary artifacts to the ADK Playground panel, and upload public HTTPS video streams directly to Google Cloud Storage.
+- **Zero-Latency Telemetry**: Displays live latency (ms), token usage, trace contexts, and confidence ring gauges for every dialogue turn.
+
+---
+
 ## 📖 Comprehensive User Manual & Usage Guide
 
 This step-by-step manual guides developers, governance officers, and administrators on how to effectively operate NovaSmart AI Governance Studio.
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
 │                        NOVASMART AI GOVERNANCE STUDIO CANVAS                            │
 ├──────────────────────────────┬──────────────────────────────┬──────────────────────────┤
@@ -96,25 +115,6 @@ This step-by-step manual guides developers, governance officers, and administrat
    - Saves binary video blobs to the Playground's Artifacts panel via `tool_context.save_artifact`.
    - Uploads bytes in-memory to Google Cloud Storage (`novasmart-seed-bucket-qwiklabs-gcp-03-1405d3f8adce`).
 3. View the generated video stream directly within the dialogue stream via public HTTPS player card.
-
----
-
-## 🎯 What Problem Does This Project Solve?
-
-Modern AI agents and multi-agent swarms operate with high autonomy, creating critical enterprise governance challenges:
-
-1. **Black-Box Agent Orchestration**: Traditional LLM chats obscure how agents delegate tasks, execute tool calls, and route requests across multi-agent pipelines.
-2. **Uncontrolled Risk & Policy Violations**: Autonomous agents can issue unauthorized discounts, override safety thresholds, or bypass pricing guidelines without human confirmation.
-3. **Auditability & Traceability Deficits**: Lack of real-time telemetry, structured JSON tool call traces, and persistent cloud audit logs makes regulatory compliance impossible.
-
----
-
-## 💡 Key Benefits of NovaSmart AI Governance Studio
-
-- **Full Multi-Agent Transparency**: Visualizes agent-to-agent (A2A) workflows on an interactive 6-node SVG graph showing request routing, tool calls, and supervisor escalations.
-- **Human-in-the-Loop Policy Guardrails**: Automatically triggers interactive policy approval modals whenever financial or policy risk thresholds (e.g., >15% price override) are breached.
-- **Seamless Multimodal Generation**: Integrates Google's Gemini Omni model to generate domain product videos, auto-persist binary artifacts to the ADK Playground panel, and upload public HTTPS video streams directly to Google Cloud Storage.
-- **Zero-Latency Telemetry**: Displays live latency (ms), token usage, trace contexts, and confidence ring gauges for every dialogue turn.
 
 ---
 
