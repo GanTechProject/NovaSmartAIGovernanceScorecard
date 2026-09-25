@@ -1,5 +1,15 @@
 # NovaSmart AI Governance Studio
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/Model-Gemini%20Omni%20Flash-8E44AD?style=for-the-badge&logo=google&logoColor=white" alt="Gemini Omni Model" />
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Tested%20With-Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright" />
+  <img src="https://img.shields.io/badge/Status-Passing-success?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build Status" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" />
+</p>
+
 ![NovaSmart Agent Demo](./demo.gif)
 
 NovaSmart AI Governance Studio is an agentic AI control plane and interactive dialogue interface designed for real-time AI compliance monitoring, policy enforcement, multi-agent orchestration, and multimodal media generation.
@@ -11,6 +21,7 @@ NovaSmart AI Governance Studio is an agentic AI control plane and interactive di
 ```text
 novasmart-ai-governance-studio/
 ├── README.md                     # Comprehensive project documentation & guide
+├── LICENSE                       # MIT open source license
 ├── demo.gif                      # Optimized looping demo video recording
 ├── index.html                    # Main glassmorphic dialogue UI application
 ├── index.css                     # Glassmorphism design tokens, theme palettes & animations
