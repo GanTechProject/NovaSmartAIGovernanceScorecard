@@ -37,6 +37,38 @@ Modern AI agents and multi-agent swarms operate with high autonomy, creating cri
 
 ---
 
+## 🔑 Required APIs, Tools & IAM Access Permissions
+
+To deploy and execute all features in this repository, ensure the following Google Cloud APIs, CLI tools, software libraries, and IAM roles are provisioned:
+
+### 1. 🌐 Google Cloud APIs Required
+- **Vertex AI API** (`aiplatform.googleapis.com`): Invokes the `gemini-omni-flash-preview` multimodal video generation model in the `global` region using `google-genai`.
+- **Cloud Storage API** (`storage.googleapis.com`): Handles direct in-memory byte streams and uploads generated video blobs to GCS.
+- **Cloud Resource Manager API** (`cloudresourcemanager.googleapis.com`): Inspects project metadata and manages bucket IAM access bindings.
+- **Firestore API** (`datastore.googleapis.com` / `firestore.googleapis.com`): Indexes governance audit logs and risk scorecard history.
+
+### 2. 🛡️ Required IAM Roles & Permissions
+- **Vertex AI User** (`roles/aiplatform.user`): Granted to the executing service account/user to run predictions on Gemini Omni models.
+- **Storage Object Admin** (`roles/storage.objectAdmin`) or **Creator** (`roles/storage.objectCreator`): Granted to write generated video files into the target GCS bucket.
+- **Storage Object Viewer (`roles/storage.objectViewer`) for `allUsers`**: Granted on the target bucket (`gs://<YOUR_BUCKET_NAME>`) to allow public web playback of generated video streams.
+
+### 3. 🐍 Required Python Libraries
+```bash
+pip install google-genai google-cloud-storage google-cloud-firestore numpy scipy
+```
+
+### 4. 📦 Required Node.js Packages
+```bash
+npm install playwright playwright-core ffmpeg-static
+```
+
+### 5. 🛠️ CLI & Runtime Requirements
+- **`gcloud` CLI**: Google Cloud SDK for authentication (`gcloud auth application-default login`) and project configuration.
+- **`Python 3.10+`**: Python runtime for running ADK tool functions and server daemons.
+- **`Node.js 18+`**: JavaScript runtime for running Playwright end-to-end visual test suites.
+
+---
+
 ## ⚡ Prerequisites
 
 Before setting up or deploying NovaSmart AI Governance Studio, ensure you have:
