@@ -6,6 +6,48 @@ NovaSmart AI Governance Studio is an agentic AI control plane and interactive di
 
 ---
 
+## 📁 Project Directory & File Structure
+
+```text
+novasmart-ai-governance-studio/
+├── README.md                     # Comprehensive project documentation & guide
+├── demo.gif                      # Optimized looping demo video recording
+├── index.html                    # Main glassmorphic dialogue UI application
+├── index.css                     # Glassmorphism design tokens, theme palettes & animations
+├── app.js                        # Token streaming engine, audio synthesizer & workflow graph
+├── avatar.png                    # Brand avatar asset for NovaSmart AI agent
+├── generate_item_video_tool.py   # ADK tool for Gemini Omni video generation & GCS upload
+├── start_server_daemon.py        # Python HTTP server daemon script
+├── record_agent_demo.js          # Playwright script for automated video demo recording
+├── run_playwright_test.js        # End-to-end automated UI verification test suite
+├── package.json                  # Node.js project manifest & dependencies
+├── package-lock.json             # Locked dependency versions (Playwright, ffmpeg-static)
+├── .gitignore                    # Git ignore file excluding build and temporary assets
+├── tools/                        # ADK Python tools directory
+│   └── generate_item_video_tool.py
+├── scripts/                      # Utility and automation scripts
+│   ├── start_server_daemon.py
+│   ├── record_agent_demo.js
+│   └── run_playwright_test.js
+└── assets/                       # Media and visual assets
+    ├── avatar.png
+    └── demo.gif
+```
+
+### Detailed File & Directory Descriptions
+
+- **`index.html`**: Main entry point for the glassmorphic Dialogue Studio layout, housing the three-column resizable canvas, preset selector, chat stream feed, 6-node SVG graph container, and decision modal overlay.
+- **`index.css`**: Design system CSS containing custom variable tokens (`--glass-bg`, `--accent-primary`, `--radius-lg`), themes (NovaSmart, Cyberpunk, Emerald, Sunset), and micro-animations.
+- **`app.js`**: Core frontend engine powering real-time token streaming, confidence ring gauges, expandable tool accordions, SVG A2A node graph renderer, and Web Audio spatial sound engine.
+- **`generate_item_video_tool.py` / `tools/generate_item_video_tool.py`**: ADK Python tool function `generate_item_video` invoking Google's Omni model (`gemini-omni-flash-preview`) in the `global` region, saving artifacts to the Playground panel via `tool_context.save_artifact`, and uploading bytes directly to GCS.
+- **`start_server_daemon.py` / `scripts/start_server_daemon.py`**: Daemon script for serving static application files locally on port 8080.
+- **`record_agent_demo.js` / `scripts/record_agent_demo.js`**: Playwright automation script for recording HD interactive agent sessions.
+- **`run_playwright_test.js` / `scripts/run_playwright_test.js`**: Comprehensive visual test suite verifying UI load, preset switching, graph rendering, and modal popups with zero console errors.
+- **`demo.gif` / `assets/demo.gif`**: High-quality 12 FPS looping GIF demonstrating real-time AI governance streaming and workflow visualization.
+- **`avatar.png` / `assets/avatar.png`**: Glowing avatar branding image for NovaSmart AI Agent.
+
+---
+
 ## 🚀 Key Features & Implemented Capabilities
 
 The application implements the following verified features and Google Cloud service integrations based on repository code:
