@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaSmart AI Dialogue Layout Studio</title>
+  <meta name="description" content="A state-of-the-art glassmorphic dialogue design system for modern agentic AI applications.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="avatar.png">
+</head>
+<body class="theme-novasmart">
+
+  <!-- Top App Navigation -->
+  <header class="app-header">
+    <div class="brand-container">
+      <img src="avatar.png" alt="NovaSmart AI Avatar" class="brand-logo" id="headerAvatar">
+      <div>
+        <h1 class="brand-title">NovaSmart Dialogue Studio</h1>
+        <p class="brand-subtitle">Agentic Interface Design System & Dialogue Layout Engine</p>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <!-- Feature 7: Spatial Audio Toggle -->
+      <button class="btn-glass" id="soundToggleBtn" title="Toggle Spatial Audio Effects">
+        🔊 Sound On
+      </button>
+
+      <!-- Theme Switcher -->
+      <div class="theme-picker" title="Switch Theme Palette">
+        <button class="theme-btn active" data-theme="novasmart" title="NovaSmart Midnight"></button>
+        <button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Pink"></button>
+        <button class="theme-btn" data-theme="emerald" title="Emerald Glass"></button>
+        <button class="theme-btn" data-theme="sunset" title="Amber Sunset"></button>
+      </div>
+
+      <button class="btn-glass" id="openModalBtn">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Modal Dialogue
+      </button>
+
+      <button class="btn-accent" id="exportBtn">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        Copy CSS
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Three-Column Resizable Layout -->
+  <main class="main-container">
+
+    <!-- Left Column: Preset Switcher & Realtime Customizer -->
+    <aside class="glass-panel sidebar-left" id="sidebarLeft">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+          Dialogue Presets
+        </div>
+        <span class="badge-tag">4 Presets</span>
+      </div>
+
+      <div class="preset-list">
+        <div class="preset-card active" data-preset="multi-agent">
+          <div class="preset-name">🤖 Multi-Agent Swarm</div>
+          <div class="preset-desc">A2A orchestration dialogue showing Agent 1, Agent 2, and supervisor escalation.</div>
+        </div>
+
+        <div class="preset-card" data-preset="tool-trace">
+          <div class="preset-name">⚡ Tool Trace & Execution</div>
+          <div class="preset-desc">Interactive callouts with raw JSON payloads, reasoning steps, and tool outputs.</div>
+        </div>
+
+        <div class="preset-card" data-preset="decision-popover">
+          <div class="preset-name">🛡️ Governance & Approval</div>
+          <div class="preset-desc">Human-in-the-loop decision card with action buttons, policy validation, and risk badges.</div>
+        </div>
+
+        <div class="preset-card" data-preset="compact-chat">
+          <div class="preset-name">💬 Streamlined Conversational</div>
+          <div class="preset-desc">Minimalist chat dialogue with dynamic avatar glows and typing feedback.</div>
+        </div>
+      </div>
+
+      <!-- Interactive Customization Sliders -->
+      <div class="customizer-section">
+        <div class="panel-title" style="font-size: 0.8rem;">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 010 4m-6 8a2 2 0 100-4m0 4a2 2 0 010-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 010-4m0 4v2m0-6V4" />
+          </svg>
+          Style Tuning
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span>Glass Blur Radius</span>
+            <span class="control-value" id="blurVal">20px</span>
+          </div>
+          <input type="range" id="blurRange" min="4" max="40" value="20">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span>Bubble Corner Radius</span>
+            <span class="control-value" id="radiusVal">20px</span>
+          </div>
+          <input type="range" id="radiusRange" min="4" max="32" value="20">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label">
+            <span>Glow Shadow Intensity</span>
+            <span class="control-value" id="glowVal">40%</span>
+          </div>
+          <input type="range" id="glowRange" min="0" max="100" value="40">
+        </div>
+
+        <div class="toggle-switch">
+          <span>Show Tool Callouts</span>
+          <label class="switch">
+            <input type="checkbox" id="showToolsToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-switch">
+          <span>Enable Micro-Animations</span>
+          <label class="switch">
+            <input type="checkbox" id="animToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Feature 6: Resizer Handle 1 -->
+    <div class="resizer" id="resizerLeft"></div>
+
+    <!-- Center Column: Dialogue Workspace Canvas -->
+    <section class="glass-panel dialogue-canvas" id="mainCanvas">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          </svg>
+          <span id="canvasTitle">Dialogue Stream</span>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <!-- Feature 1: View Switcher -->
+          <div class="theme-picker" style="padding: 2px;">
+            <button class="pill-btn" id="streamViewBtn" style="background: var(--accent-primary); padding: 0.25rem 0.6rem;">💬 Stream</button>
+            <button class="pill-btn" id="graphViewBtn" style="background: transparent; padding: 0.25rem 0.6rem;">🕸️ Workflow Graph</button>
+          </div>
+
+          <button class="btn-glass" id="clearChatBtn" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;">Clear</button>
+        </div>
+      </div>
+
+      <!-- Scrollable Message Feed -->
+      <div class="chat-history" id="chatHistory">
+        <!-- Messages injected by app.js -->
+      </div>
+
+      <!-- Feature 1 Container: Multi-Agent Workflow Node Map View (Hidden by default) -->
+      <div class="graph-container" id="graphContainer" style="display: none;">
+        <svg class="node-graph-svg" viewBox="0 0 800 400" id="nodeGraphSVG">
+          <!-- Rendered dynamically in app.js -->
+        </svg>
+      </div>
+
+      <!-- Bottom Chat Input Bar -->
+      <div class="chat-input-area">
+        <div class="action-pills">
+          <button class="pill-btn" onclick="sendQuickPrompt('Can you price match TechVerse Pro for $1,299.00?')">💡 Price Match Query</button>
+          <button class="pill-btn" onclick="sendQuickPrompt('Evaluate policy compliance for Case #4')">🛡️ Policy Safety Check</button>
+          <button class="pill-btn pill-success" onclick="sendQuickPrompt('Approve competitor discount override')">✅ Manager Approval</button>
+        </div>
+
+        <div class="input-box-wrapper" id="inputBoxWrapper">
+          <!-- Feature 5: Microphone Button -->
+          <button class="mic-btn" id="micBtn" title="Toggle Voice Microphone Input">
+            🎤
+          </button>
+
+          <input type="text" class="chat-input" id="messageInput" placeholder="Type a message or trigger an AI dialogue agent response..." />
+          
+          <button class="send-btn" id="sendBtn" title="Send Dialogue Message">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature 6: Resizer Handle 2 -->
+    <div class="resizer" id="resizerRight"></div>
+
+    <!-- Right Column: Live Inspector & Code Metrics -->
+    <aside class="glass-panel sidebar-right" id="sidebarRight">
+      <div class="panel-header">
+        <div class="panel-title">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          Dialogue Inspector
+        </div>
+        <span class="badge-tag">CSS & Telemetry</span>
+      </div>
+
+      <div style="padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.5rem;">Live CSS Variables</div>
+          <pre class="code-block" id="cssInspector">
+:root {
+  --glass-bg: rgba(18, 22, 41, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --accent-glow: 0 0 25px rgba(99, 102, 241, 0.4);
+  --user-bubble-bg: linear-gradient(135deg, #4f46e5, #6366f1);
+  --radius-lg: 20px;
+}
+          </pre>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 0.85rem;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Agent Telemetry</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.75rem;">
+            <div>
+              <div style="color: var(--text-muted);">Latency</div>
+              <div style="font-family: var(--font-mono); font-weight: 600; color: var(--accent-secondary);" id="telemetryLatency">142 ms</div>
+            </div>
+            <div>
+              <div style="color: var(--text-muted);">Tokens</div>
+              <div style="font-family: var(--font-mono); font-weight: 600; color: var(--accent-primary);" id="telemetryTokens">384 tok</div>
+            </div>
+            <div>
+              <div style="color: var(--text-muted);">Trace Context</div>
+              <div style="font-family: var(--font-mono); color: var(--success-color);" id="telemetryTrace">00-4bf92f3576...</div>
+            </div>
+            <div>
+              <div style="color: var(--text-muted);">Compliance</div>
+              <div style="font-family: var(--font-mono); color: var(--success-color);">SPAN_AND_EVENT</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 0.85rem;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.4rem;">Design System Status</div>
+          <ul style="font-size: 0.73rem; color: var(--text-secondary); padding-left: 1rem; line-height: 1.6;">
+            <li>✔ Interactive A2A Workflow Graph</li>
+            <li>✔ Real-time Token Streaming Engine</li>
+            <li>✔ Expandable Accordions with Syntax Views</li>
+            <li>✔ Confidence Ring Gauges & Tooltips</li>
+            <li>✔ Audio Waveform Cards & Mic Voice Input</li>
+            <li>✔ Resizable Draggable Sidebars</li>
+            <li>✔ Web Audio Spatial Sound Engine</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Interactive Modal Popup Dialog Overlay -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span style="display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: var(--radius-md); color: var(--accent-primary);">
+            🛡️
+          </span>
+          Policy Approval Dialogue
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p style="margin-bottom: 0.75rem;">
+          <strong>Agent 2 Escalation Request:</strong> Price match requested for <code style="font-family: var(--font-mono); color: var(--accent-secondary);">TechVerse Pro (SKU: TVP-9082)</code>.
+        </p>
+        <p style="margin-bottom: 0.75rem;">
+          The requested competitor price is <strong>$1,299.00</strong> (18.8% discount below MSRP). Policy threshold mandates human supervisor confirmation for discounts exceeding 15%.
+        </p>
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 0.75rem; font-size: 0.8rem; color: #a7f3d0;">
+          ✔ Competitor URL verified via <code style="font-family: var(--font-mono);">scrape_competitor_price</code> tool.<br>
+          ✔ Stock availability confirmed on competitor site.
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-glass" id="modalRejectBtn" style="color: var(--danger-color); border-color: rgba(239, 68, 68, 0.3);">Reject Override</button>
+        <button class="btn-accent" id="modalApproveBtn">Authorize $1,299.00 Match</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

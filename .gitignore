@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+palette.png
+upbeat_lofi_music.wav
+video_temp/
